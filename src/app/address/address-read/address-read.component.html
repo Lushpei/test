@@ -1,0 +1,44 @@
+<div class="addresses">
+    <div class="header">
+        <div class="section-one">
+            <span>Addresses</span>
+        </div>
+    </div>
+    <div class="content">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Country</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Processing Region</th>
+                    <th scope="col">Financial Region</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let address of addresses">
+                    <td>{{address.country}}</td>
+                    <td>{{address.streetAddress1 + ' ' + address.streetAddress2 }}</td>
+                    <td>{{address.processingRegion}}</td>
+                    <td>{{address.financialRegion}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="text-align-right">
+                        <a (click)="openAddress(addressAddContent)">Add Address</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<ng-template #addressAddContent let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Add address</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <app-address-create [selectedAccountID]="1"></app-address-create>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+    </div>
+</ng-template>

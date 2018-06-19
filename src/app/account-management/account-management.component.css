@@ -1,0 +1,220 @@
+.header {
+  height: 3em;
+  height: 56px;
+  background-color: #062350;
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  padding: 5px 0%;
+  text-align: justify;
+}
+.header:before {
+  content: '';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+
+.header-title {
+  font-family: Roboto;
+  font-size: 22px;
+  color: #fff;
+  margin-left: 9px;
+  display: inline-block;
+}
+
+.header-link{
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.user-menu_icon {
+  font-family: "Material Design Icons";
+  font-size: 24px;
+  color: #fff;
+  float: right;
+  margin-right: 2em;
+  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.mdi-account:before {
+  content: "\F004";
+  color: #fff;
+}
+
+.link_home:before{
+content: "\f2dc";
+  color: #fff;
+  font-family: "Material Design Icons";
+  font-size: 24px;
+}
+
+.header-search-field {
+  border: 1px solid #333fd3;
+  width: calc(100% - 25px);
+  background-color: #002171;
+  height: 39px;
+  margin: 0;
+  top: 1px;
+  position: relative;
+}
+.header-search-field:after{
+  content: "\f140";
+  color: #fff;
+  display: inline-block;
+  font-family: "Material Design Icons";
+  font-size: 18px;
+  width: 30px;
+  /* height: 100%; */
+  vertical-align: middle;
+}
+
+.header-search-field_i {
+  width: calc(100% - 38px);
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  left: 24px;
+  top: 5px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.header-search{
+  display: inline-block;
+  width: 37%;
+  left: 2%;
+  position: relative;
+  vertical-align: middle;
+}
+
+.header-search_button{
+  border: none;
+  background: transparent;
+  width: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  outline: none;
+}
+
+.header-search_button:after{
+  content: "\f349";
+  color: #fff;
+  font-family: "Material Design Icons";
+  font-size: 24px;
+}
+
+.wrapp-menu{
+  width: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  height: 30px;
+}
+
+input {
+  color: #fafafa;
+  position: relative;
+  left: 24px;
+  top: 5px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+input::-webkit-input-placeholder {
+  color: #fafafa;
+}
+
+input::-moz-placeholder {
+  color: #fafafa;
+}
+
+input:-ms-input-placeholder {
+  color: #fafafa;
+}
+
+input::placeholder {
+  color: #fafafa;
+}
+
+.add{
+  position: absolute;
+  text-align: center;
+  right: 5%;
+  bottom: 20px;
+  display: inline-block;
+  padding: 0px;
+  width: 55px;
+  height: 55px;
+  background-color: #0D47A1;
+  border-radius: 50px;
+  -webkit-box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.add:hover{
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.add:after{
+  content: "\f415";
+  color: #fff;
+  font-family: "Material Design Icons";
+  font-size: 24px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  position: absolute;
+  left: 50%;
+  transition: all .4s cubic-bezier(.25, .8, .25, 1);
+}
+
+.add:hover:before{
+  content: "Creat activity";
+  position: absolute;
+  left: -102px;
+  top: 50%;
+  display: inline-block;
+  width: auto;
+  color: #fff;
+  background-color: #6d6d6d;
+  border-radius: 2px;
+  padding: 2px 7px;
+  transform: translateY(-50%);
+}
+
+.add:hover:after{
+  content: "\f0ee";
+  color: #fff;
+  font-family: "Material Design Icons";
+  font-size: 24px;
+  transition: all .4s cubic-bezier(.25, .8, .25, 1);
+}
+
+@media only screen and (max-width: 550px) {
+  .header-search {
+  display: none;
+}
+}
+

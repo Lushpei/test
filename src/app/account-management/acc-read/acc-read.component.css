@@ -1,0 +1,19 @@
+.accounts{width: 100%;text-align: center;border-bottom: 1px solid;height: 50px;line-height: 50px;}
+.accounts .section-one span{float: left;margin-left: 10px;}
+.accounts .section-one{width: 25%;float: left;}
+.accounts .section-two input{width: 450px;height: 30px;}
+.accounts .section-two{width: 50%;float: left;}
+.accounts .section-three{width: 25%;float: left;}
+
+.table{width: 70%;margin-left: 15%;margin-right: 15%;float: left;}
+.table th{padding: 0;border-bottom: 1px solid;text-align: left;padding-left: 10px;}
+.table td{padding: 0;border-bottom: 1px solid;text-align: left;padding-left: 10px;cursor: pointer;}
+.table-striped tbody tr:nth-of-type(odd){background-color: inherit;}
+
+.mdi:before, .mdi-set{display:inline-block;font:normal normal normal 24px/1 "Material Design Icons";
+    font-size:inherit;text-rendering:auto;line-height:inherit;-webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;color:black;}
+.mdi-set, .mdi-24px.mdi:before{font-size:24px;}
+.mdi-20px{font-size:20px;}
+.mdi-marg12px{margin-left:12px;}
+.span-black.span-w600.span-16px{color:black;font-weight:600;font-size:16px;}

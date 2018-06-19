@@ -1,0 +1,124 @@
+/*---------------- IMPORTANT ----------------------- NOTE ---------- IMPORTANT----------------------
+
+      THIS SECTION IS ONLY FOR REFERENCE ONLY AND WILL BE REMOVED BEFORE DEPLOYMENT
+      PLEASE MAKE SURE TO MOVE ANY AREA OUT OF THIS SECTION IF BEEN USED THRU APPLICATION
+
+--------------------------------------------------------------------------------------------------*/
+.user-menu.no-active{
+  opacity: 0;
+  height: 0;
+  padding: 0;
+  transition: height .4s cubic-bezier(.25,.8,.25,1), opacity .4s cubic-bezier(.25,.8,.25,1) , padding 1s step-end;
+}
+
+.user-menu_icon {
+  font-family: "Material Design Icons";
+  font-size: 24px;
+  color: #fff;
+  float:right;
+  margin-right: 2em;
+  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.mdi-account:before{
+  color: #fff;
+}
+
+.user-menu {
+  overflow: hidden;
+  opacity: 1;
+  width: 292px;
+  height: 200px;
+  background-color: #f5f5f5;
+  position: absolute;
+  right: 30px;
+  top: 50px;
+  padding: 10px 17px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+  transition: height .4s cubic-bezier(.25,.8,.25,1), opacity .4s cubic-bezier(.25,.8,.25,1);
+}
+
+.menu-top {
+  padding-bottom: 7px;
+  border-bottom: 1px solid #fff;
+}
+
+.menu-top-info {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.menu-top-info_name {
+  font-size: 24px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.menu-top-info_rules {
+  font-size: 13px;
+  font-family: Roboto;
+  font-weight: 400;
+  margin: 0px;
+  color: #757575;
+}
+
+.menu-top-button {
+  font-family: "Material Design Icons";
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  top: 6px;
+  right: 8px;
+}
+
+.menu-top-button_help {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 24px;
+  text-decoration: none;
+  color: #000;
+}
+
+.menu-top-button_logout {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 24px;
+  margin: 0 0 0 4px;
+  cursor: pointer;
+}
+
+.menu-notif {
+
+}
+
+.notif-empty {
+  text-align: center;
+}
+
+.notif-empty:before {
+  display: block;
+  font-family: "Material Design Icons";
+  font-size: 66px;
+  content: "\f09a";
+  height: 90px;
+  color: #757575;
+}
+
+.notif-empty_text {
+  display: block;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  color: #757575;
+}

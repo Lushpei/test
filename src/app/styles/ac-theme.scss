@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+@import './colors';
+
+
+$ac-app-primary: mat-palette($mat-grey, 800);
+$ac-app-accent: mat-palette($mat-blue, 900);
+$ac-app-warn: mat-palette($mat-red);
+$ac-app-theme: mat-light-theme($ac-app-primary, $ac-app-accent, $ac-app-warn);
+
+
+

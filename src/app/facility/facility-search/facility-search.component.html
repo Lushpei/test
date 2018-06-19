@@ -1,0 +1,231 @@
+<div class=" wrapp">
+
+  <div class="header">
+
+    <p class="header-step step1" [ngClass]="{active: step==1, done: step!=1}" (click)="setStep(1)">
+      <span class="header-step_icon"></span>
+      <span class="header-step_text">
+    Account basics
+</span>
+    </p>
+
+    <p class="header-step step2" [ngClass]="{active: step==2 , done: step > 2}" (click)="setStep(2)">
+      <span class="header-step_icon"></span>
+      <span class="header-step_text">
+    Address
+</span>
+    </p>
+
+    <p class="header-step step3" [ngClass]="{active: step==3}" (click)="setStep(3)">
+      <span class="header-step_icon"></span>
+      <span class="header-step_text">
+    Contacts
+</span>
+    </p>
+
+  </div>
+
+  <div class="content">
+    <h2 class="content_title" *ngIf="step==1">
+      Primary instructions placeholder
+    </h2>
+
+
+    <form class="login-form form">
+      <div class="  input-field" [ngClass]="{hide: step!=1}" >
+        <mat-form-field>
+          <input matInput placeholder="Account Name" type="text" name="acc-name" [(ngModel)]="newAccount.name"/>
+        </mat-form-field>
+      </div>
+
+      <div class="  input-field" [ngClass]="{hide: step!=1}">
+        <mat-form-field>
+          <input matInput placeholder="Account Number" type="text" name="acc-number"
+                 [(ngModel)]="newAccount.accountNumber"/>
+        </mat-form-field>
+      </div>
+
+
+      <div class=" input-field" [ngClass]="{hide: step!=2}">
+        <mat-form-field>
+          <mat-select placeholder="Favorite food" [(value)]="this.newAccount.statusId">
+            <mat-option *ngFor="let item of statusIds" [(value)]="item.id" >
+              {{ item.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class=" input-field" [ngClass]="{hide: step != 3 }">
+        <mat-form-field>
+          <input matInput placeholder="Phone Number" type="text" [(ngModel)]="newAccount.phone" name="acc-number"  id="inputAccPhone"/>
+        </mat-form-field>
+      </div>
+
+      <div class=" input-field" [ngClass]="{hide: step != 3 }">
+        <mat-form-field>
+          <input matInput placeholder="Address" type="text" [(ngModel)]="newAccount.address" name="acc-number" id="inputAccAddress"/>
+        </mat-form-field>
+      </div>
+
+    </form>
+
+
+      <div class="row" *ngIf="firstStep == true && secondStep == false && thirdStep == false" >
+        <div class="container">
+          <div class="pl-3">
+          <span>Enter a name to search existing facilities</span>
+        </div>
+          <div class="col-4 pt-4">
+              <div class="group">
+                  <input type="text" [(ngModel)]="facilityName"  required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Facility name</label>
+                </div>
+          </div>
+          <div class="float-right" >
+              <button class="btn btn-default" >Cancel</button>
+              <button class="btn btn-primary" (click)="searchfacility()">Search</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row p-3" *ngIf="firstStep == true && secondStep == true && thirdStep == false" >
+            <div class="container">
+                    <div class="pl-3">
+                    <span>Select an existing facility or create a new one</span>
+                  </div>
+                    <div class="col-12 pt-4">
+                      <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                          <thead>
+                            <tr>
+                              <th>Name</th>
+                              <th>Product</th>
+                              <th>Region</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let item of facilityVM; let i = index">
+                              <td>{{item.Name}}</td>
+                              <td>{{item.Product}}</td>
+                              <td>{{item.Region}}</td>
+                            </tr>
+                          </tbody>
+                          </table>
+                      </div>
+                    </div>
+                    <div class="float-right">
+                            <button class="btn btn-default" (click)="searchfacility()">Back</button>
+                            <button class="btn btn-primary" (click)="createnewfacility()">Create New Facility</button>
+                        </div>
+                  </div>
+          </div>
+
+          <div class="row p-3" *ngIf="firstStep == true && secondStep == true && thirdStep == true" >
+
+                <div class="container-fluid containerborder">
+                        <h2>Facility Details</h2>
+                        <div class="row">
+                                <div class="col-6">
+                                      <div class="group">
+                                        <input type="text" [(ngModel)]="facility.Name" name="Name" required>
+                                      <span class="highlight"></span>
+                                      <span class="bar"></span>
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="group ">
+                                        <input type="text" [(ngModel)]="facility.FacilityTypeID" name="FacilityTypeID" required>
+                                      <span class="highlight"></span>
+                                      <span class="bar"></span>
+                                        <label>Type Code</label>
+                                    </div>
+                                    <div class="group">
+                                        <input required type="text" [(ngModel)]="facility.LanguageCode" name="LanguageCode">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Language Code</label>
+                                    </div>
+                                    <div class="group">
+                                        <input required type="text" [(ngModel)]="facility.VatNumber" name="VatNumber">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Vat Number</label>
+                                    </div>
+                                    <div class="group">
+                                        <input required type="text" [(ngModel)]="facility.FTECount" name="FTECount">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>FTE Count</label>
+                                    </div>
+                                  </div>
+                                  <div class="col-6">
+                                    <div class="group">
+                                        <input required type="text" [(ngModel)]="facility.ProductionLineCount" name="ProductionLineCount">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Production Line Count</label>
+                                    </div>
+                                    <div class="group">
+                                        <input required type="text">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Facility Side</label>
+                                    </div>
+                                    <div class="group ">
+                                        <input required type="text" [(ngModel)]="facility.YearBuilt" name="YearBuilt">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Year built</label>
+                                    </div>
+                                    <div class="group ">
+                                        <input required type="text">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Cultural specifications</label>
+                                    </div>
+                                    <div class="group ">
+                                        <input required type="text">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Language Spoken</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <br />
+                                <div class="container-fluid containerborder">
+                                    <h2>Address</h2>
+                                    <div class="row">
+                                            <div class="col-6">
+                                                  <div class="group">
+                                                    <input type="text" required [(ngModel)]= "facility.Directions" name="Directions">
+                                                  <span class="highlight"></span>
+                                                  <span class="bar"></span>
+                                                    <label>Facility diretions</label>
+                                                </div>
+                                                <div class="group ">
+                                                    <input type="text" required [(ngModel)]= "facility.TravelDetails" name="TravelDetails">
+                                                  <span class="highlight"></span>
+                                                  <span class="bar"></span>
+                                                    <label>Airport and hotel details</label>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                  <div class="float-right pt-3">
+                                        <button type="button" class="btn btn-primary" (click)="addNewFacility()" >Save Facility</button>
+                                    </div>
+                                  </div>
+            </div>
+
+
+
+    </div>
+<div class="wrapp-btn">
+  <a routerLink="../acc-read" class="wrapp-btn_cancel" *ngIf="step == 1">Cancel</a>
+  <button class="wrapp-btn_prev" *ngIf="step != 1" (click)="setStep(step-1)">Back</button>
+  <button class="wrapp-btn_next" *ngIf="step != 3" (click)="setStep(step+1)">Next</button>
+  <a routerLink="../acc-read" class="wrapp-btn_save" *ngIf="step == 3" (click)="saveAccount()">Save</a>
+</div>

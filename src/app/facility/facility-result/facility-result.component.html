@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="header">
+
+    <p class="header-step step1" [ngClass]="{active: step==1, done: step!=1}" (click)="setStep(1)">
+      <span class="header-step_icon"></span>
+      <span class="header-step_text">
+    Account basics
+</span>
+    </p>
+
+    <p class="header-step step2" [ngClass]="{active: step==2 , done: step > 2}" (click)="setStep(2)">
+      <span class="header-step_icon"></span>
+      <span class="header-step_text">
+    Address
+</span>
+    </p>
+
+    <p class="header-step step3" [ngClass]="{active: step==3}" (click)="setStep(3)">
+      <span class="header-step_icon"></span>
+      <span class="header-step_text">
+    Contacts
+</span>
+    </p>
+
+  </div>
+    <div class="row">
+      <div class="col-md-4">
+          <button type="button" class="btn btn-default btn-circle btn-lg d-inline-block activebtn">1</button>
+          <h5 class="d-inline-block">Facility name</h5>
+      </div>
+      <div class="col-md-4">
+          <button type="button" class="btn btn-default btn-circle btn-lg d-inline-block activebtn">2</button>
+          <h5 class="d-inline-block">Review facilities</h5>
+      </div>
+      <div class="col-md-4">
+          <button type="button" class="btn btn-default btn-circle btn-lg d-inline-block">3</button>
+          <h5 class="d-inline-block">Facility details</h5>
+      </div>
+
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="container">
+          <div class="pl-3">
+          <span>Select an existing facility or create a new one</span>
+        </div>
+          <div class="col-12 pt-4">
+            <div class="table-responsive">
+              <table class="table table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Product</th>
+                    <th>Region</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of facilityVM; let i = index">
+                    <td>{{item.Name}}</td>
+                    <td>{{item.Product}}</td>
+                    <td>{{item.Region}}</td>
+                  </tr>
+                </tbody>
+                </table>
+            </div>
+
+
+          </div>
+          <div class="float-right">
+              <button class="btn btn-default" routerLink="/facility">Back</button>
+              <button class="btn btn-primary" routerLink="/facility/facility-details">Create New Facility</button>
+          </div>
+        </div>
+      </div>
+    </div>

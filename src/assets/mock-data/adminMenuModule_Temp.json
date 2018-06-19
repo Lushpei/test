@@ -1,0 +1,12 @@
+[
+  { "title": "Users",  "hrefLink": "acc-management/acc-create"},
+  { "title": "Groups",  "hrefLink": "acc-management/acc-read"},
+  { "title": "Roles",  "hrefLink": "#"},
+  { "title": "Competencies", "hrefLink": "#"},
+  { "title": "Account types", "hrefLink": "#"},
+  { "title": "Facility types", "hrefLink": "#"},
+  { "title": "Activity types", "hrefLink": "#"},
+  { "title": "Criteria", "hrefLink": "#"},
+  { "title": "Regions", "hrefLink": "#"},
+  { "title": "Region types", "hrefLink": "#"}
+]

@@ -1,0 +1,21 @@
+@import "../../styles/ac-theme";
+@import "../../styles/colors";
+
+.container{
+  max-width: 100%;
+  padding: 0;
+}
+.facilities{float: left;width: 80%;margin-left: 10%;margin-right: 10%;border: 1px solid;padding: 0 0 0 5%;}
+.facilities .header .section-one span{font-size: 20px;float: left;font-weight: bold;}
+.table{width: 100%;}
+.table th,.table td{padding: 0;border: 0;text-align: left;padding-left: 10px;line-height: 30px;}
+.table td a{font-size: 16px;text-decoration: underline;cursor: pointer;}
+.table td.text-align-right{text-align: right;padding-right: 10px;}
+.table-striped tbody tr:nth-of-type(odd){background-color: inherit;}
+
+
+.btn-circle {
+  position: fixed;
+  right: 5%;
+  bottom: 20px;
+}

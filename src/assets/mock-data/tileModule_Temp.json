@@ -1,0 +1,9 @@
+[
+  { "title": "Accounts", "subtitle":"", "iconName": "mdi-store", "hrefLink": "acc-management"},
+  { "title": "Scheduler", "subtitle":"+ Create activity", "iconName": "mdi-calendar", "hrefLink": "#"},
+  { "title": "Planner", "subtitle":"", "iconName": "mdi-briefcase-outline", "hrefLink": "#"},
+  { "title": "Reports","subtitle":"",  "iconName": "mdi-check-all", "hrefLink": "#"},
+  { "title": "Contacts","subtitle":"",  "iconName": "mdi-contacts", "hrefLink": "#"},
+  { "title": "Analytics","subTitle":"",  "iconName": "mdi-poll", "hrefLink": "#"},
+  { "title": "Admin","subtitle":"",  "iconName": "mdi-account-settings-variant", "hrefLink": "#"}
+]

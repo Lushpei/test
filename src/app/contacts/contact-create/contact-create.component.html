@@ -1,0 +1,123 @@
+<div>  
+  <form #contactForm="ngForm">   
+      <div class="row col-12 headerbgcolor">  
+        <div class="col-0 pt-2 pl-3 pr-2">
+          <button type="button" class="close align-middle" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>  
+          </div>  
+             <div class="col-3 pl-1">
+           <!-- <input type="text" required class="headertextbox" placeholder="Contact Name"> -->
+        </div> 
+          <div *ngIf="isUpdate !== true" class="col-8 pt-2">
+              <button type="button" [disabled]="contactForm.invalid" (click)="saveContact()" class="headerbtnbgcolor btn float-right">Create</button>
+          </div>
+          <div *ngIf="isUpdate === true" class="col-8 pt-2">
+            <button type="button" (click)="updateContact()" class="headerbtnbgcolor btn float-right">Update</button>
+        </div>
+        </div>
+    
+        <div class="container containerborder">
+            <span>ASSOCIATIONS</span>
+          <a (click)="show=!show" class="btn float-right">ADD ASSOCIATION</a>      
+        </div>
+    
+        <div class="container containerborder"> 
+    <div class="group">      
+      <input type="text" required [(ngModel)] = "contact.lastName" name="lastName" #lastName="ngModel" >
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Last Name</label>
+      <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+             class="alert alert-danger">
+
+          <div *ngIf="lastName.errors.required">
+            Name is required.
+          </div>
+        </div>
+    </div>
+
+    <div class="group">      
+      <input type="text" required [(ngModel)] = "contact.firstName" name="firstName" #firstName="ngModel">
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>First Name</label>
+      <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+             class="alert alert-danger">
+
+          <div *ngIf="firstName.errors.required">
+            Name is required.
+          </div>
+        </div>
+    </div>
+
+    <div class="group">      
+      <input type="text" [(ngModel)] = "contact.jobTitle" name="jobTitle">
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Title</label>
+    </div>
+      
+    <div class="group">      
+      <input type="text" required [(ngModel)] = "contact.emailAddress" name="emailAddress" #emailAddress="ngModel">
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Email</label>
+    </div>
+
+    <div class="group">      
+        <label>USA +1</label>
+        <input type="text"  class="padcountry" name="officePhone" [(ngModel)] = "contact.officePhone" data-masked-input="999-999-9999" placeholder="XXX-XXX-XXXX" maxlength="12">
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Office Phone</label>
+    </div>
+    <div class="group">      
+        <label>USA +1</label>
+        <input type="text"  class="padcountry" name="mobilePhone" [(ngModel)] = "contact.mobilePhone" data-masked-input="999-999-9999" placeholder="XXX-XXX-XXXX" maxlength="12">
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Mobile Phone</label>
+    </div>
+    <!-- <div *ngIf="show" class="group" >   
+        <select class="form-control selcls"  (change)="onChange($event)">
+            <option  *ngFor="let item of AddressList; let i = index"  [value]="item.title">{{item.title}}</option>
+          </select>        
+      </div>
+      <div *ngIf="show == true && mailingAdd == true" class="group" >   
+          <textarea rows="1" required></textarea>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Mailing Address</label>  
+      </div>
+      <div *ngIf="show == true && billingAdd == true" class="group" >   
+        <textarea rows="1" required></textarea>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Billing Address</label>  
+      </div>
+      <div *ngIf="show == true && activityAdd == true" class="group" >   
+          <input type="text" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Activity Address</label>  
+      </div>
+      <div *ngIf="show == true && webAdd == true" class="group" >   
+          <input type="text" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Web Address</label>  
+      </div>
+      <div *ngIf="show == true && noteAdd == true" class="group" >   
+        <textarea rows="1" required></textarea>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Note Address</label>  
+      </div> -->
+
+  </div>
+  <div class="container">
+      <a (click)="show=!show" class="btn float-right">{{show ? 'LESS INFORMATION' : 'ADD INFORMATION'}}</a>
+  </div>
+</form>
+</div>

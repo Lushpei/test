@@ -1,0 +1,78 @@
+<div class="wrapp">
+  <div class="header">
+
+    <p class="header-step step1" [ngClass]="{active: step==1, done: step!=1}" (click)="setStep(1)">
+      <span class="header-step_icon"></span>
+      <span class="header-step_text">
+    Account basics
+</span>
+    </p>
+
+    <p class="header-step step2" [ngClass]="{active: step==2 , done: step > 2}" (click)="setStep(2)">
+      <span class="header-step_icon"></span>
+      <span class="header-step_text">
+    Address
+</span>
+    </p>
+
+    <p class="header-step step3" [ngClass]="{active: step==3}" (click)="setStep(3)">
+      <span class="header-step_icon"></span>
+      <span class="header-step_text">
+    Contacts
+</span>
+    </p>
+
+  </div>
+  <div class="content">
+    <h2 class="content_title" *ngIf="step==1">
+      Primary instructions placeholder
+    </h2>
+
+
+    <form class="login-form form">
+      <div class="  input-field" [ngClass]="{hide: step!=1}" >
+        <mat-form-field>
+          <input matInput placeholder="Account Name" type="text" name="acc-name" [(ngModel)]="newAccount.name"/>
+        </mat-form-field>
+      </div>
+
+      <div class="  input-field" [ngClass]="{hide: step!=1}">
+        <mat-form-field>
+          <input matInput placeholder="Account Number" type="text" name="acc-number"
+                 [(ngModel)]="newAccount.accountNumber"/>
+        </mat-form-field>
+      </div>
+
+
+      <div class=" input-field" [ngClass]="{hide: step!=2}">
+        <mat-form-field>
+          <mat-select placeholder="Favorite food" [(value)]="this.newAccount.statusId">
+            <mat-option *ngFor="let item of statusIds" [(value)]="item.id" >
+                {{ item.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class=" input-field" [ngClass]="{hide: step != 3 }">
+        <mat-form-field>
+          <input matInput placeholder="Phone Number" type="text" [(ngModel)]="newAccount.phone" name="acc-number"  id="inputAccPhone"/>
+        </mat-form-field>
+      </div>
+
+      <div class=" input-field" [ngClass]="{hide: step != 3 }">
+        <mat-form-field>
+          <input matInput placeholder="Address" type="text" [(ngModel)]="newAccount.address" name="acc-number" id="inputAccAddress"/>
+        </mat-form-field>
+      </div>
+
+    </form>
+
+  </div>
+  <div class="wrapp-btn">
+    <a routerLink="../acc-read" class="wrapp-btn_cancel" *ngIf="step == 1">Cancel</a>
+    <button class="wrapp-btn_prev" *ngIf="step != 1" (click)="setStep(step-1)">Back</button>
+    <button class="wrapp-btn_next" *ngIf="step != 3" (click)="setStep(step+1)">Next</button>
+    <a routerLink="../acc-read" class="wrapp-btn_save" *ngIf="step == 3" (click)="saveAccount()">Save</a>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="dash-mod-container {{isActiveBtn}}" >
+  <a [href]="tileMod.hrefLink" class="dash-mod-link" (mousedown)="changeStateBtn('active')" (mouseup)="changeStateBtn('')" (mouseleave)="changeStateBtn('')">
+    <p class="mdi mdi-light dash-mod-link_icon" [ngClass]="tileMod.iconName" ></p>
+    <div class="dash-mod-link-title">
+      <h3 class="dash-mod-link-title_i">{{tileMod.title}}</h3><br/>
+      <span class="dash-mod-link_subtitle">{{tileMod.subtitle}} </span>
+    </div>
+  </a>
+</div>

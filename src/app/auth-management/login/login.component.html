@@ -1,0 +1,76 @@
+<div class="wrapp-login">
+  <div class="login-header">
+    <div class="login-header-arrow">
+      <div class="login-header-arrow-i arrow-i__blue"></div>
+    </div>
+    <div class="login-header-arrow">
+      <div class="login-header-arrow-i arrow-i__black"></div>
+    </div>
+    <div class="login-header-arrow">
+      <div class="login-header-arrow-i arrow-i__grey"></div>
+    </div>
+    <div class="login-header-arrow">
+      <div class="login-header-arrow-i arrow-i__blue"></div>
+    </div>
+    <div class="login-header-arrow">
+      <div class="login-header-arrow-i arrow-i__black"></div>
+    </div>
+    <div class="login-header-arrow">
+      <div class="login-header-arrow-i arrow-i__grey"></div>
+    </div>
+    <div class="login-header-arrow">
+      <div class="login-header-arrow-i arrow-i__blue"></div>
+    </div>
+    <div class="login-header-arrow">
+      <div class="login-header-arrow-i arrow-i__black"></div>
+    </div>
+    <div class="login-header-arrow">
+      <div class="login-header-arrow-i arrow-i__blue"></div>
+    </div>
+  </div>
+  <div class="login-block">
+
+
+    <form novalidate [formGroup]="myform" id="regular-signin-form" class="login-form" (ngSubmit)="onSubmit()">
+      <h2 class="login-form_title">
+        AuditCycle
+      </h2>
+
+      <div class="login-form-field input-field {{isActiveFieldName}}"
+           [ngClass]="{'active':userName && (userName.dirty || userName.touched)}">
+        <label for="userName" class="login-form-field_label">Username</label>
+        <input type="text"
+               id="userName"
+               class="login-form-field_i  "
+               formControlName="userName"
+               required
+               (click)="changeStateFieldName('actv')"
+               (focus)="changeStateFieldName('actv')"
+               (blur)="changeStateFieldName('')">
+        <div class="form-control-feedback"
+             *ngIf="userName.errors && (userName.dirty || userName.touched)">
+          <p class="form-control-feedback_text" *ngIf="userName.errors.required">Username is required</p>
+        </div>
+      </div>
+
+      <div class="login-form-field input-field {{isActiveFieldPassword}}"
+           [ngClass]="{'active': password && (password.dirty || password.touched)}">
+        <label for="password" class="login-form-field_label">Password</label>
+        <input type="password"
+               class="login-form-field_i  "
+               formControlName="password"
+               id="password"
+               required
+               (click)="changeStateFieldPass('actv')"
+               (focus)="changeStateFieldPass('actv')"
+               (blur)="changeStateFieldPass('')">
+        <div class="form-control-feedback"
+             *ngIf="password.errors && (password.dirty || password.touched)">
+          <p *ngIf="password.errors.required">Password is required</p>
+        </div>
+      </div>
+
+      <button [style.width]="'100%'"  mat-raised-button color="primary" class="login-form_btn login-btn"  [disabled]="myform.invalid">LOGIN</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<form>
+    <div class="container containerborder">
+        <div class="group">
+            <p>Associate an additional address with this account</p>
+        </div>
+        <div class="group">
+            <select required id="inputAddressType" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="newAddress.addressTypeId">
+                <option *ngFor="let addType of addressTypes" [value]="addType.id">{{addType.name}}</option>
+            </select>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Address Type</label>
+        </div>
+        <div *ngIf="newAddress.addressTypeId != undefined">
+            <div class="group sub-group-left">
+                <input required type="text" [(ngModel)]="newAddress.streetAddress2" [ngModelOptions]="{standalone: true}">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Address</label>
+            </div>
+            <div class="group sub-group-right">
+                <input required type="text">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Suite, etc. (Optional)</label>
+            </div>
+            <div class="group">
+                <input required type="text" [(ngModel)]="newAddress.city" [ngModelOptions]="{standalone: true}">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>City</label>
+            </div>
+            <div class="group">
+                <input required type="text" [(ngModel)]="newAddress.state" [ngModelOptions]="{standalone: true}">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>State</label>
+            </div>
+            <div class="group sub-group-left">
+                <input required type="text" [(ngModel)]="newAddress.country" [ngModelOptions]="{standalone: true}">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Country</label>
+            </div>
+            <div class="group sub-group-right">
+                <input required type="text" [(ngModel)]="newAddress.postalCode" [ngModelOptions]="{standalone: true}">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Postal Code</label>
+            </div>
+            <div class="float-right">
+                <button type="button" class="btn btn-primary" (click)="saveAddress()">Save Address</button>
+            </div>
+        </div>
+    </div>
+    
+</form>

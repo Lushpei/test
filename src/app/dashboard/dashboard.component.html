@@ -1,0 +1,10 @@
+<div class="wrapp">
+  <div class="dash-mod">
+    <ul class="list-inline">
+      <li *ngFor="let mod of dashMods" class="list-inline-item">
+        <app-dashboard-module [tileMod]="mod"></app-dashboard-module>
+      </li>
+    </ul>
+  </div>
+</div>
+

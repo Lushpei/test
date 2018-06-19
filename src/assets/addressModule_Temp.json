@@ -1,0 +1,4 @@
+[
+  { "addressId" : "1", "streetAddress1": "Wile E's TNT", "streetAddress2": "Western NA", "postalCode": "01112", "city": "NW", "state": "NJ", "country": "United States", "county": "US", "financialRegion" : "NW US", "processingRegion" : "NW US" },
+  { "addressId" : "1", "streetAddress1": "Spring Field", "streetAddress2": "MA", "postalCode": "01020", "city": "NW", "state": "NJ", "country": "United States", "county": "US", "financialRegion" : "NW US", "processingRegion" : "NW US" }
+]

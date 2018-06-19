@@ -1,0 +1,7 @@
+@import '~@angular/material/theming';
+
+$ac-app-primary: mat-palette($mat-grey, A100);
+$ac-app-accent: mat-palette($mat-grey);
+$ac-app-warn: mat-palette($mat-red);
+
+$ac-app-theme-dark: mat-dark-theme($ac-app-primary, $ac-app-accent, $ac-app-warn);

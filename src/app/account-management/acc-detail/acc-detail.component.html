@@ -1,0 +1,31 @@
+<div class="account-detail">
+  <div class="header">
+    <div class="section-one">
+      <a routerLink="../../acc-read" class="mdi mdi-reply mdi-dark mdi-marg12px float-left mdi-24px userLogin"></a>
+      <span class="span-black span-w600 span-16px">{{account.name}}</span>
+    </div>
+    <div class="section-two">
+    </div>
+  </div>
+  <div class="content">
+    <table class="table table-striped">
+      <tbody>
+      <tr>
+        <td>{{account.name}}</td>
+        <td>{{account.region}}</td>
+      </tr>
+      <tr>
+        <td>{{account.accountNumber}}</td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+    <div>
+      <app-address-read></app-address-read>
+    </div>
+  </div>
+  <div>
+    <app-facility-list></app-facility-list>
+  </div>
+</div>
+

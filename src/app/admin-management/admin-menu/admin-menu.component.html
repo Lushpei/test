@@ -1,0 +1,9 @@
+<div class="wrapp">
+  <div class="dash-mod">
+    <ul class="list-group">
+      <li *ngFor="let mod of adminMods" class="list-group-item">
+        <a routerLink="{{mod.hrefLink}}">{{mod.title}}</a>        
+      </li>
+    </ul>
+  </div>
+</div>

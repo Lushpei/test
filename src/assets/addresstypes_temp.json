@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "title": "Mailing"
+    },
+    {
+        "id": 2,
+      "title": "Billing"
+    },
+    {
+        "id": 3,
+      "title": "Activity"
+    },
+    {
+      "id": 4,
+      "title": "Web"
+    },
+    {
+        "id": 5,
+      "title": "Note"
+    }  
+  ]

@@ -1,0 +1,485 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/@mdi/font/css/materialdesignicons.min.css";
+@import "~@angular/material/theming";
+@import "./app/styles/ac-theme";
+@import "./app/styles/ac-theme-dark";
+@import "./app/styles/typography";
+
+@include mat-core($ac-general-typography);
+
+.ac-theme {
+  @include angular-material-theme($ac-app-theme);
+}
+
+.ac-theme-dark {
+  @include angular-material-theme($ac-app-theme-dark);
+}
+
+
+/*--------------------------------------------------------------------------------------------------*/
+
+body {
+  font-size: .875rem;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 48px 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #999;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+/*
+ * Content
+ */
+
+[role="main"] {
+  padding-top: 48px; /* Space for fixed navbar */
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, .25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, .1);
+  border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+/*
+ * Utilities
+ */
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+
+/*========================================= END TEMP CODE*/
+
+
+
+
+/*Begin Style for dark header*/
+
+.dark-header {
+  height: 3em;
+  height: 56px;
+  background-color: $primary-header;
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  padding: 5px 0%;
+  text-align: justify;
+  line-height: normal;
+  cursor: default;
+}
+.dark-header:before {
+  content: '';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.dark-header:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+
+.dark-header .header-title {
+  font-family: Roboto;
+  font-size: 21px;
+  font-weight: 100;
+  color: #fff;
+  margin-left: 9px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dark-header .header-link{
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.dark-header .user-menu_icon {
+  font-family: "Material Design Icons";
+  font-size: 24px;
+  color: #fff;
+  float: right;
+  margin-right: 2em;
+  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+.dark-header .mdi-account:before {
+  content: "\F004";
+  color: #fff;
+}
+
+.dark-header .link_home:before{
+  content: "\f2dc";
+  color: $header-color-text;
+  font-family: "Material Design Icons";
+  font-size: 24px;
+}
+
+.dark-header .header-search-field {
+  border: 1px solid $header-border;
+  width: calc(100% - 25px);
+  background-color: $secondary-header;
+  height: 39px;
+  margin: 0;
+  top: 0px;
+  position: relative;
+}
+.dark-header .header-search-field:after{
+  content: "\f140";
+  color: $header-color-text;
+  display: inline-block;
+  font-family: "Material Design Icons";
+  font-size: 18px;
+  width: 30px;
+  vertical-align: middle;
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+}
+
+.dark-header .header-search-field_i {
+  width: calc(100% - 38px);
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  left: 24px;
+  top: 5px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+
+.dark-header  .header-search{
+  display: inline-block;
+  width: 37%;
+  left: 2%;
+  position: relative;
+  vertical-align: middle;
+}
+
+.dark-header  .header-search_button{
+  border: none;
+  background: transparent;
+  width: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  outline: none;
+}
+
+.dark-header .header-search_button:after{
+  content: "\f349";
+  color: $header-color-text;
+  font-family: "Material Design Icons";
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.dark-header  .wrapp-menu{
+  width: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  height: 30px;
+}
+
+.dark-header  input {
+  color: $header-color-text;
+  position: relative;
+  left: 24px;
+  top: 5px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.dark-header  input::-webkit-input-placeholder {
+  color: $header-color-text;
+}
+
+.dark-header  input::-moz-placeholder {
+  color: $header-color-text;
+}
+
+.dark-header  input:-ms-input-placeholder {
+  color: $header-color-text;
+}
+
+.dark-header  input::placeholder {
+  color: $header-color-text;
+}
+
+
+@media only screen and (max-width: 550px) {
+  .dark-header   .header-search {
+    display: none;
+  }
+}
+
+.dark-header  .mat-tooltip {
+  font-size: 14px;
+}
+
+/*end Style for dark header*/
+
+
+
+/*style for circle button */
+.ac-theme .mat-fab.mat-primary.btn-circle[mat-fab]{
+  text-align: center;
+  display: inline-block;
+  padding: 0px;
+  width: 55px;
+  height: 55px;
+  background-color: $primary-btn;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 24px;
+}
+
+
+
+
+
+.btn-circle:after{
+  content: "\f415";
+  color: #fff;
+  font-family: "Material Design Icons";
+  font-size: 24px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  position: absolute;
+  left: 50%;
+  transition: all .4s cubic-bezier(.25, .8, .25, 1);
+}
+
+.btn-circle:hover .label{
+  position: absolute;
+  left: -102px;
+  top: 50%;
+  display: inline-block;
+  width: auto;
+  color: #fff;
+  opacity: 0.8;
+  border-radius: 2px;
+  padding: 2px 7px;
+  transform: translateY(-50%);
+}
+
+.btn-circle:hover:after{
+  content: "\f0ee";
+  color: #fff;
+  font-family: "Material Design Icons";
+  font-size: 24px;
+  transition: all .4s cubic-bezier(.25, .8, .25, 1);
+}
+/*style for circle button*/
+
+
+/*Begin style for label*/
+ .mat-tooltip {
+  font-size: 14px;
+}
+
+/*End style for label*/
+
+
+
+/*Begin style for table*/
+
+
+.mat-form-field{
+  width: 100%;
+}
+
+.mat-header-cell{
+  font-size: 15px;
+  font-weight: 400;
+  font-family: Roboto;
+}
+
+.mat-row{
+  position: relative;
+}
+.mat-cell {
+  font-size: 18px;
+  font-family: Roboto;
+}
+
+.table-inf {
+  width: 69%;
+  margin: 0 auto;
+  max-width: 100%;
+  position: absolute;
+  top: 105px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ac-theme .mat-cell {
+  color: rgba(0, 0, 0, 0.87);
+  margin-right: 8px;
+}
+
+div .mat-row {
+  padding: 0 2.42%;
+}
+
+@media only screen and (max-width: 650px) {
+  .mat-cell {
+    font-size: 2.8vw;
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .mat-cell {
+    font-size: 14px;
+  }
+
+  .table-inf{
+    width: 344px;
+    min-width: 270px;
+  }
+}
+/*End style for table*/
+
+
+/*Begin style for input*/
+
+
+.input-field{
+  margin: 1px 0px 15.5px 0px;
+}
+
+.mat-form-field-infix{
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  color: #d1d1d1;
+}
+
+
+body.ac-theme .mat-input-element {
+  color: rgba(0,0,0, 0.87);
+}
+
+/*label for input*/
+
+
+/*border-bottom for input*/
+body .mat-form-field-underline .mat-form-field-ripple {
+  height:1px;
+  color: #d1d1d1;
+}
+
+body.ac-theme .mat-form-field-underline {
+  color: #d1d1d1;
+  background-color: #d1d1d1;
+}
+/*End style for input*/
+
+
+/*Begin style for input select*/
+body .mat-select-panel {
+  max-height: 275px;
+}
+/*End style for input select*/

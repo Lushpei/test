@@ -1,0 +1,82 @@
+<div class="accounts">
+  <header class="dark-header header">
+  <span class="header-link">
+  <a class=" link_home" routerLink="/"></a>
+  <span class="header-title">Account</span>
+    </span>
+    <div class="header-search">
+      <label class="header-search-field">
+        <input type="text" placeholder="Search"  [(ngModel)]="search_acc_text" class="header-search-field_i " (ngModelChange)="onSearchKeyPress()"/>
+      </label>
+      <button class="header-search_button"></button>
+    </div>
+    <div class="wrapp-menu">
+      <app-user-menu></app-user-menu>
+    </div>
+  </header>
+
+    <div class="content">
+        <!--<table class="table table-striped">-->
+            <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th scope="col">Name</th>-->
+                    <!--<th scope="col">Region</th>-->
+                    <!--<th scope="col">Account</th>-->
+                <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+                <!--<tr *ngFor="let acc of accounts"  (dblclick)="accountDetail(element.accountID)" >-->
+                    <!--<td>{{acc.name}}</td>-->
+                    <!--<td>{{acc.region}}</td>-->
+                    <!--<td>{{acc.accountNumber}}</td>-->
+                <!--</tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+
+
+      <div class=" table-inf example-container mat-elevation-z8">
+        <mat-table #table [dataSource]="accounts">
+
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+          <!-- Position Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <span class="over" (click)="accountDetail(element.accountID)"></span>
+              {{element.name}}
+            </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="region">
+            <mat-header-cell *matHeaderCellDef> Region </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{element.region}}
+            </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="account">
+            <mat-header-cell *matHeaderCellDef> Account </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{element.accountNumber}}
+
+            </mat-cell>
+          </ng-container>
+
+
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;">
+
+          </mat-row>
+        </mat-table>
+      </div>
+
+    </div>
+  <a  mat-fab color="primary" routerLink="../acc-create/" class="btn-circle" matTooltip="Creat activity" [matTooltipPosition]="'left'">
+  </a>
+</div>
+
+

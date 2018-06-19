@@ -1,0 +1,61 @@
+@import "./styles/ac-theme-dark";
+@import "./styles/colors";
+
+.appHeader{
+  height: 3em;
+  background-color: $primary;
+
+}
+
+.appHeader{
+  height: 3em;
+  height: 56px;
+  background-color: $primary-header;
+  display: block;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+
+.appHeader:after{
+  content: '';
+  height: 100%;
+  display: inline-block;
+}
+
+.logo{
+  color: white;
+  font-size: 21px;
+  text-decoration: none;
+  height: 31px;
+  line-height: normal;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  font-weight: 300;
+  color: white;
+}
+
+
+
+.mdi-36px.mdi-set, .mdi-36px.mdi:before {
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.pageSection{
+  margin-top: 5em;
+}
+
+@media only screen and (max-width: 550px){
+  .appHeader {
+    position: fixed;
+  }
+}
+
+

@@ -1,0 +1,30 @@
+/*basicstylings------------------------------------------*/
+.container{font-family:'Roboto';width:500px;margin:10px;display:block;background:#FFF;padding:20px;border: 0 !important;    }
+p{font-size: 20px;font-weight: bold;}
+.sub-group.left{width: 300px;float: left;}
+.sub-group.right{width: 150px;float: left;}
+/*formstartingstylings-------------------------------*/
+.group	{position:relative;margin-bottom:35px;width: 100%;float: left;}
+.group.sub-group-left {width: calc(60% - 20px);margin: 0px 20px 35px 0;padding: 0;float: left;}
+.group.sub-group-right {width: 40%;margin: 0px 0 35px 0;padding: 0;float: left;}
+input{font-size:18px;padding:10px 10px 10px 5px;border-radius: 0;display:block;width:100%;border:none;border-bottom:1px solid #757575;}
+select{font-size:18px;padding:5px 10px 10px 5px;border-radius: 0;display:block;width:100%;border:none;border-bottom:1px solid #757575;}
+select:focus,input:focus{outline:none;box-shadow: none;}
+
+/*LABEL=======================================*/
+label{color:#999;font-size:18px;font-weight:normal;position:absolute;pointer-events:none;left:5px;top:10px;transition:0.2s ease all;-moz-transition:0.2s ease all;-webkit-transition:0.2s ease all;}
+/*activestate*/
+input:focus~label,input:valid ~ label,select:focus~label,select:valid ~ label{top:-20px;font-size:14px;color:#5264AE;}
+
+/*BOTTOMBARS=================================*/
+.bar{position:relative;display:block;width:100%;}
+.bar:before,.bar:after{content:'';height:2px;width:0;bottom:1px;position:absolute;background:#5264AE;transition:0.2s ease all;-moz-transition:0.2s ease all;-webkit-transition:0.2s ease all;}
+.bar:before{left:50%;}
+.bar:after{right:50%;}
+
+/*activestate*/
+input:focus~.bar:before,input:focus~.bar:after{width:50%;}
+/*HIGHLIGHTER==================================*/
+.highlight{position:absolute;height:60%;width:100%;top:25%;left:0;pointer-events:none;opacity:0.5;}
+/*activestate*/
+input:focus~.highlight,select:focus~.highlight{-webkit-animation:inputHighlighter0.3s ease;-moz-animation:inputHighlighter0.3s ease;animation:inputHighlighter0.3s ease;}
